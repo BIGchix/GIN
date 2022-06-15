@@ -9,3 +9,5 @@ if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 BiocManager::install("KEGGREST")
 ```
+Then load the package:
+<code>library(KEGGREST)</code><br>

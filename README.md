@@ -10,6 +10,12 @@ Figure 1. The conversion of metabolic and signaling pathways to meta-pathways. *
 ## The resulting GIN files
 ### The availability of the GIN files
 The GINs of human(hsa), mouse(mmu), arabidopsis(ath) and rice(osa) can be found in the folder "GINs_four_species". The relations extracted from "PPrel" and "PCrel" were stored in the "*.pprel.*" files, while the relations extracted from "reactions" were stored in "*.reaction.*" files. We have compiled 7077 species based on KEGG database. The other GIN files are freely available upon request to the [maintainer](chix@big.ac.cn)<br>
+To merge the signaling and metabolic meta-pathways, simply use "cat" command to concatenate them and then remove the redundancies:
+```
+cat relations.pprel.hsa.txt relations.reaction.hsa.txt > gin.hsa.tmp
+cat gin.hsa.tmp > sort |uniq > gin.hsa.txt
+rm gin.hsa.tmp
+```
 
 ### The basic structure of the GIN files
 The structure of the GIN files is composed of three columns:</br>
@@ -17,5 +23,5 @@ The structure of the GIN files is composed of three columns:</br>
 </br>
 It's similar to the edge lists where the first column is the starting node of an edge, the second column is the ending node of the edge, the third column is the type of the edge. This simple structure makes it easy to be imported in various topology tools such as igraph and cytoscape.
 </br>
-Genes in the GIN files use NCBI's gene ID as their identifiers, and compounds use the KEGG's compound ids ("cpd:XXX"). 
+Genes in the GIN files use NCBI's gene ID as their identifiers, and compounds use the KEGG's compound ids ("cpd:XXX"). To convert NCBI's gene ID to other types of identifiers (gene symbol, ensembl gene id etc.), one can follow the instructions [here](https://github.com/RenGroup/ibNN/blob/main/id_conversion/README_idConversion.md) . It provide tips on how to obtain the daily-updated official id mapping files from NCBI's ftp. 
 </br>

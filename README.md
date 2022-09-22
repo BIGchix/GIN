@@ -23,5 +23,7 @@ The structure of the GIN files is composed of three columns:</br>
 </br>
 It's similar to the edge lists where the first column is the starting node of an edge, the second column is the ending node of the edge, the third column is the type of the edge. This simple structure makes it easy to be imported in various topology tools such as igraph and cytoscape.
 </br>
+### ID conversions
 Genes in the GIN files use NCBI's gene ID as their identifiers, and compounds use the KEGG's compound ids ("cpd:XXX"). To convert NCBI's gene ID to other types of identifiers (gene symbol, ensembl gene id etc.), one can follow the instructions [here](https://github.com/RenGroup/ibNN/blob/main/id_conversion/README_idConversion.md) . It provide tips on how to obtain the daily-updated official id mapping files from NCBI's ftp. 
 </br>
+To convert the compound ids to other types of ids, one can investigate the R package [KEGGREST](https://bioconductor.org/packages/release/bioc/html/KEGGREST.html), especially the "keggGet" function. Of course, this package also offers a solution to map the gene ids to other gene identifiers. 

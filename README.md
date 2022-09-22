@@ -21,8 +21,9 @@ rm gin.hsa.tmp
 The structure of the GIN files is composed of three columns:</br>
 <img width="306" alt="image" src="https://user-images.githubusercontent.com/50654825/191729864-52fad977-19c3-488d-afdc-b5a80d01db23.png">
 </br>
-It's similar to the edge lists where the first column is the starting node of an edge, the second column is the ending node of the edge, the third column is the type of the edge. This simple structure makes it easy to be imported in various topology tools such as igraph and cytoscape.
+It's similar to the edge lists where the first column is the starting node of an edge, the second column is the ending node of the edge, the third column is the type of the edge. The ";" seperates the substrates and enzymes in an intermediate, therefore, the presence of ";" in the name means that this node is an intermediate. This feature is useful when one is trying to interprete the network or to simplify a subset of the network. The "*_*" separate the subunits of a large molecule. When there are alternatives of the subunits (for example, the histones), we would create nodes for every possible combinations of the subunits, so that each node in the network only represent one particular molecule. 
 </br>
+The four types of the edges are defined as they are in Figure 1, with special cases for type4 when the reactions result in the inhibition of the biological functions of the product, then the type4 relations will be written as "type4-inhibition". 
 ### ID conversions
 Genes in the GIN files use NCBI's gene ID as their identifiers, and compounds use the KEGG's compound ids ("cpd:XXX"). To convert NCBI's gene ID to other types of identifiers (gene symbol, ensembl gene id etc.), one can follow the instructions [here](https://github.com/RenGroup/ibNN/blob/main/id_conversion/README_idConversion.md) . It provide tips on how to obtain the daily-updated official id mapping files from NCBI's ftp. 
 </br>

@@ -25,6 +25,6 @@ It's similar to the edge lists where the first column is the starting node of an
 </br>
 The four types of the edges are defined as they are in Figure 1, with special cases for type4 when the reactions result in the inhibition of the biological functions of the product, then the type4 relations will be written as "type4-inhibition". 
 ### ID conversions
-Genes in the GIN files use NCBI's gene ID as their identifiers, and compounds use the KEGG's compound ids ("cpd:XXX"). To convert NCBI's gene ID to other types of identifiers (gene symbol, ensembl gene id etc.), one can follow the instructions [here](https://github.com/RenGroup/ibNN/blob/main/id_conversion/README_idConversion.md) . It provide tips on how to obtain the daily-updated official id mapping files from NCBI's ftp. 
+Genes in the GIN files use NCBI's gene ID as their identifiers, and compounds use the KEGG's compound ids ("cpd:XXX"). To convert NCBI's gene ID to other types of identifiers (gene symbol, ensembl gene id etc.), one can follow the instructions [here](https://github.com/RenGroup/ibNN/blob/main/id_conversion/README_idConversion.md) . It provides tips on how to obtain the daily-updated official id mapping files from NCBI's ftp. 
 </br>
 To convert the compound ids to other types of ids, one can investigate the R package [KEGGREST](https://bioconductor.org/packages/release/bioc/html/KEGGREST.html), especially the "keggGet" function. Of course, this package also offers a solution to map the gene ids to other gene identifiers. 
